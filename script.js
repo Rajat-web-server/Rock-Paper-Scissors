@@ -1,4 +1,21 @@
 console.log('Hello World');
 
-let getComputerChoice=Math.random();
+let getComputerChoice = Math.random();
+
+function computer() {
+    if (getComputerChoice >= 0 && getComputerChoice <= 0.333) {
+        getComputerChoice = 'Rock'
+    }
+    else if (getComputerChoice >= 0.333 && getComputerChoice <= 0.666) {
+        getComputerChoice = 'Paper'
+    }
+    else if (getComputerChoice >= 0.666 && getComputerChoice <= 1){
+        getComputerChoice = 'Scissor'
+    }
+    console.log(getComputerChoice);
+}
+computer();
+
+
+
 

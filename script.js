@@ -1,8 +1,9 @@
 console.log('Hello World');
 
-let getComputerChoice = Math.random();
+
 
 function computer() {
+    let getComputerChoice = Math.random();
     if (getComputerChoice >= 0 && getComputerChoice <= 0.333) {
         getComputerChoice = 'Rock'
     }
@@ -14,7 +15,7 @@ function computer() {
     }
     console.log(getComputerChoice);
 }
-computer();
+
 
 
 

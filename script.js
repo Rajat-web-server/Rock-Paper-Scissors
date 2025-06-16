@@ -16,6 +16,12 @@ function computer() {
     console.log(getComputerChoice);
 }
 
+function userChoice(){
+  let user = prompt("Choose between rock, paper, scissor")
+console.log(user);  
+}
+
+
 
 
 

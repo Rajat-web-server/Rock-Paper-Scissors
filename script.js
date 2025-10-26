@@ -5,38 +5,18 @@ let computerScore = 0;
 let draw_ = 0;
 let roundCount = 1;
 
-document.getElementById("toChoose").addEventListener("click", () => {
-   if (roundCount <= 3) {
-      console.log("round : " + roundCount);
-      const humanSelection = userChoice();
-      const computerSelection = computerChoice();
-      playRound(computerSelection, humanSelection);
-      roundCount++;
-   }
-   else {
-
-      console.log("Final Result");
-      console.log("Human won : " + humanScore);
-      console.log("Computer won : " + computerScore);
-      console.log("Draws : " + draw_);
-      /* document.getElementById("toChoose").disabled = true; */
-      /* console.clear(); */
-      document.getElementById("toChoose").addEventListener("click", function () {
-         let newBtn = document.createElement("button");
-         newBtn.textContent = "Reset";
-         newBtn.addEventListener("click", reset());
-         document.body.appendChild(newBtn);
-      }
-      );
-   }
-});
-
 function reset() {
    humanScore = 0;
    computerScore = 0;
    draw_ = 0;
    roundCount = 1
    console.clear();
+   let output1 = document.getElementById("userScore");
+   output1.textContent = humanScore;
+   let output2 = document.getElementById("compScore");
+   output2.textContent = computerScore;
+   let output = document.getElementById("result");
+   output.innerHTML = "";
 }
 
 function computerChoice() {
@@ -54,64 +34,144 @@ function computerChoice() {
    return getComputerChoice;
 }
 
-function userChoice() {
-   let user = prompt("Choose between rock, paper, scissor")
-   console.log("Human Choice : " + user);
-   return user;
-}
+
+let userValue;
+let user = document.querySelector('.rock');
+user.addEventListener("click", () => {
+   userValue = "Rock";
+   console.log("user value: " + userValue);
+   let comp = computerChoice();
+   playRound(comp, userValue);
+
+});
+let user2 = document.querySelector('.paper');
+user2.addEventListener("click", () => {
+   userValue = "Paper";
+   console.log("user value: " + userValue);
+   let comp = computerChoice();
+   playRound(comp, userValue);
+
+});
+let user3 = document.querySelector('.scissor');
+user3.addEventListener("click", () => {
+   userValue = "Scissor";
+   console.log("user value: " + userValue);
+   let comp = computerChoice();
+   playRound(comp, userValue);
+});
+// console.log(document.querySelector('.rock'));
 
 
 
 //Here the computer and human are undefined
 /* console.log(computer+" "+ human); */
 function playRound(computer, human) {
-   if (computer === 'Rock' && human === 'rock') {
+   if (computer === 'Rock' && human === 'Rock') {
       console.log("It's a Draw");
       draw_++;
       console.log('Draw : ' + draw_);
+      let output1 = document.getElementById("userScore");
+      output1.textContent = humanScore;
+      let output2 = document.getElementById("compScore");
+      output2.textContent = computerScore;
+      let output = document.getElementById("result");
+      output.innerHTML = "It's a Draw !! Computer chose " + computer + " and you chose " + human;
    }
-   else if (computer === 'Rock' && human === 'paper') {
+   else if (computer === 'Rock' && human === 'Paper') {
       console.log('userChoice won');
       humanScore++;
       console.log('human score : ' + humanScore);
+      let output1 = document.getElementById("userScore");
+      output1.textContent = humanScore;
+      let output2 = document.getElementById("compScore");
+      output2.textContent = computerScore;
+      let output = document.getElementById("result");
+      output.innerHTML = "You Won !! Computer chose " + computer + " and you chose " + human;
    }
-   else if (computer === 'Rock' && human === 'scissor') {
+   else if (computer === 'Rock' && human === 'Scissor') {
       console.log('computerChoice won');
       computerScore++;
       console.log('Computer score : ' + computerScore);
+      let output1 = document.getElementById("userScore");
+      output1.textContent = humanScore;
+      let output2 = document.getElementById("compScore");
+      output2.textContent = computerScore;
+      let output = document.getElementById("result");
+      output.innerHTML = "You Lost !! Computer chose " + computer + " and you chose " + human;
    }
-   else if (computer === 'Paper' && human === 'scissor') {
+   else if (computer === 'Paper' && human === 'Scissor') {
       console.log('userChoice won');
       humanScore++;
       console.log('human score : ' + humanScore);
+      let output1 = document.getElementById("userScore");
+      output1.textContent = humanScore;
+      let output2 = document.getElementById("compScore");
+      output2.textContent = computerScore;
+      let output = document.getElementById("result");
+      output.innerHTML = "You Won !! Computer chose " + computer + " and you chose " + human;
    }
-   else if (computer === 'Paper' && human === 'paper') {
+   else if (computer === 'Paper' && human === 'Paper') {
       console.log("It's a Draw");
       draw_++;
       console.log('Draw : ' + draw_);
+      let output1 = document.getElementById("userScore");
+      output1.textContent = humanScore;
+      let output2 = document.getElementById("compScore");
+      output2.textContent = computerScore;
+      let output = document.getElementById("result");
+      output.innerHTML = "It's a Draw !! Computer chose " + computer + " and you chose " + human;
    }
-   else if (computer === 'Paper' && human === 'rock') {
+   else if (computer === 'Paper' && human === 'Rock') {
       console.log('computerChoice won');
       computerScore++;
       console.log('Computer score : ' + computerScore);
+      let output1 = document.getElementById("userScore");
+      output1.textContent = humanScore;
+      let output2 = document.getElementById("compScore");
+      output2.textContent = computerScore;
+      let output = document.getElementById("result");
+      output.innerHTML = "You Lost !! Computer chose " + computer + " and you chose " + human;
+
    }
-   else if (computer === 'Scissor' && human === 'scissor') {
+   else if (computer === 'Scissor' && human === 'Scissor') {
       console.log("It's a Draw");
       draw_++;
       console.log('Draw : ' + draw_);
+      let output1 = document.getElementById("userScore");
+      output1.textContent = humanScore;
+      let output2 = document.getElementById("compScore");
+      output2.textContent = computerScore;
+      let output = document.getElementById("result");
+      output.innerHTML = "It's a Draw !! Computer chose " + computer + " and you chose " + human;
    }
-   else if (computer === 'Scissor' && human === 'rock') {
+   else if (computer === 'Scissor' && human === 'Rock') {
       console.log('userChoice won');
       humanScore++;
       console.log('human score : ' + humanScore);
+      let output1 = document.getElementById("userScore");
+      output1.textContent = humanScore;
+      let output2 = document.getElementById("compScore");
+      output2.textContent = computerScore;
+      let output = document.getElementById("result");
+      output.innerHTML = "You Won !! Computer chose " + computer + " and you chose " + human;
    }
-   else if (computer === 'Scissor' && human === 'paper') {
+   else if (computer === 'Scissor' && human === 'Paper') {
       console.log('computerChoice won');
       computerScore++;
       console.log('Computer score : ' + computerScore);
+      let output1 = document.getElementById("userScore");
+      output1.textContent = humanScore;
+      let output2 = document.getElementById("compScore");
+      output2.textContent = computerScore;
+      let output = document.getElementById("result");
+      output.innerHTML = "You Lost !! Computer chose " + computer + " and you chose " + human;
+   }
+   else {
+      console.log("use the appropriate value");
    }
 
 }
+
 
 
 

@@ -5,15 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Rock</h1>
-    <h1>Paper</h1>
-    <h1>Scissors</h1>
-    <button id="toChoose">Play</button>
+
+    <div class="container">
+        <div class="title">  
+            <h1>Rock  Paper  Scissor</h1>
+        </div>
+        <div class="scoreboard">
+            <div class="left">
+                <div class="you">
+                    <p>You</p>
+                </div>
+                <div class="score1">
+                   <p id="userScore">0</p> 
+                </div>
+            </div>
+            <div class="middle">
+                <div class="class1">|</div>
+                <div class="class1">|</div>
+                <div class="class1">|</div>
+                <div class="class1">|</div>
+                
+            </div>
+            <div class="right">
+                <div class="computer">
+                    <p>Computer</p>
+                </div>
+                <div class="score2">
+                    <p id="compScore">0</p>
+                </div>
+            </div>
+        </div>
+        <div class="board">
+            <div class="buttonR">
+            <button class="rock">Rock </button>   
+            </div>
+            <div class="buttonP">
+              <button class="paper">Paper</button>  
+            </div>
+            <div class="buttonS">
+               <button class="scissor">Scissor</button> 
+            </div>
+        </div>
+        <div class="announce">
+            <p id="result"></p>
+        </div>
+        <div class="reset">
+             <button onclick="reset()">Reset</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
-    <p></p>
+
 
 </body>
 
